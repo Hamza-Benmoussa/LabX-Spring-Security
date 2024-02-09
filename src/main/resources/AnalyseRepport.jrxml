@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AnalyseRpport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6a5e3404-e39a-456b-9423-e2e024502121">
+    <property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (3)"/>
+    <queryString language="SQL">
+        <![CDATA[SELECT
+    a.nom AS nomAnalyse,
+    p.nom AS Nom,
+    p.prenom AS Prenom,
+    p.numero_telephone AS Numero,
+    p.adresse AS Adresse,
+    p.date_naissance AS dateNaissancePatient,
+    ta.nom AS NomTypeAnalyse,
+    te.description AS nomTest,
+    te.status_resultat AS Resultat,
+    n.description AS libelleNorme,
+    n.max AS maxValueNorme,
+    n.min AS minValueNorme,
+    n.unite AS uniteNorme
+FROM
+    analyses a
+JOIN
+    echantillon e ON a.echantillon_id = e.id
+JOIN
+    patient p ON e.patient_id = p.id
+JOIN
+    type_analyse ta ON ta.analyse_id = a.id
+JOIN
+    test te ON te.type_analyse_id = ta.id
+JOIN
+    norme n ON te.norme_id = n.id
+WHERE
+    ta.nom IN ('BIOCHIMIE','CHIMIE') ORDER BY ta.nom ASC]]>
+    </queryString>
+    <field name="nomanalyse" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="nomanalyse"/>
+        <property name="com.jaspersoft.studio.field.label" value="nomanalyse"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="analyses"/>
+    </field>
+    <field name="nom" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="nom"/>
+        <property name="com.jaspersoft.studio.field.label" value="nom"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="patient"/>
+    </field>
+    <field name="prenom" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="prenom"/>
+        <property name="com.jaspersoft.studio.field.label" value="prenom"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="patient"/>
+    </field>
+    <field name="numero" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="numero"/>
+        <property name="com.jaspersoft.studio.field.label" value="numero"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="patient"/>
+    </field>
+    <field name="adresse" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="adresse"/>
+        <property name="com.jaspersoft.studio.field.label" value="adresse"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="patient"/>
+    </field>
+    <field name="datenaissancepatient" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="datenaissancepatient"/>
+        <property name="com.jaspersoft.studio.field.label" value="datenaissancepatient"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="patient"/>
+    </field>
+    <field name="nomtypeanalyse" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="nomtypeanalyse"/>
+        <property name="com.jaspersoft.studio.field.label" value="nomtypeanalyse"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="type_analyse"/>
+    </field>
+    <field name="nomtest" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="nomtest"/>
+        <property name="com.jaspersoft.studio.field.label" value="nomtest"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="test"/>
+    </field>
+    <field name="resultat" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="resultat"/>
+        <property name="com.jaspersoft.studio.field.label" value="resultat"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="test"/>
+    </field>
+    <field name="libellenorme" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="libellenorme"/>
+        <property name="com.jaspersoft.studio.field.label" value="libellenorme"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="norme"/>
+    </field>
+    <field name="maxvaluenorme" class="java.lang.Double">
+        <property name="com.jaspersoft.studio.field.name" value="maxvaluenorme"/>
+        <property name="com.jaspersoft.studio.field.label" value="maxvaluenorme"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="norme"/>
+    </field>
+    <field name="minvaluenorme" class="java.lang.Double">
+        <property name="com.jaspersoft.studio.field.name" value="minvaluenorme"/>
+        <property name="com.jaspersoft.studio.field.label" value="minvaluenorme"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="norme"/>
+    </field>
+    <field name="unitenorme" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="unitenorme"/>
+        <property name="com.jaspersoft.studio.field.label" value="unitenorme"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="norme"/>
+    </field>
+    <group name="Group1">
+        <groupExpression><![CDATA[$F{nomtypeanalyse}]]></groupExpression>
+        <groupHeader>
+            <band height="38">
+                <textField>
+                    <reportElement mode="Transparent" x="0" y="0" width="180" height="30" backcolor="#ABF9FF" uuid="d1d02038-2089-43bf-b90f-6036c0404a31"/>
+                    <box>
+                        <pen lineWidth="1.0" lineStyle="Double" lineColor="#FFFFFF"/>
+                    </box>
+                    <textElement textAlignment="Justified" verticalAlignment="Middle">
+                        <font fontName="Bodoni MT Black" size="14" isBold="true" isItalic="true" isUnderline="true"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{nomtypeanalyse}]]></textFieldExpression>
+                </textField>
+            </band>
+        </groupHeader>
+        <groupFooter>
+            <band/>
+        </groupFooter>
+    </group>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <pageHeader>
+        <band height="134" splitType="Stretch">
+            <textField>
+                <reportElement x="380" y="6" width="141" height="30" uuid="62ff01e5-7749-4d93-92b4-b346312e9df2"/>
+                <textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="380" y="36" width="138" height="30" uuid="b68d2e95-3064-4b09-90a0-cb7bb1b55fec"/>
+                <textFieldExpression><![CDATA[$F{prenom}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="380" y="66" width="138" height="30" uuid="d7873982-bfac-4711-be31-cf9a20de586c"/>
+                <textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="380" y="100" width="138" height="30" uuid="cc24dc30-6d95-493c-956f-5019a7b30a38"/>
+                <textFieldExpression><![CDATA[$F{adresse}]]></textFieldExpression>
+            </textField>
+            <image>
+                <reportElement x="19" y="-9" width="171" height="133" uuid="0aba52c6-af9a-482b-aa95-7ead3084852c"/>
+                <imageExpression><![CDATA["http://www.cmw.ma/wp-content/uploads/2018/01/laboratoire-analyses-300x267.png"]]></imageExpression>
+            </image>
+            <staticText>
+                <reportElement mode="Transparent" x="280" y="0" width="70" height="20" forecolor="#050505" backcolor="#82FAF8" uuid="fae71296-c844-49a8-bf7f-fe389d8f8db5">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8ee27e59-2e67-46dd-8e49-ef3509ad2351"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Bodoni MT Black" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+                </textElement>
+                <text><![CDATA[Nom : ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Transparent" x="280" y="30" width="70" height="20" forecolor="#050505" backcolor="#82FAF8" uuid="a0264c1b-3936-45df-8487-f30eb562bbec">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba6fbd6d-8cb9-47ae-8355-a62762d138f5"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Bodoni MT Black" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+                </textElement>
+                <text><![CDATA[Prenom : ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Transparent" x="280" y="60" width="70" height="20" forecolor="#050505" backcolor="#82FAF8" uuid="5be29806-18fe-4274-92aa-fd19f381adfb">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="39d4b5c2-1fdb-47f6-ab73-78bfbc4fec23"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Bodoni MT Black" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+                </textElement>
+                <text><![CDATA[Numero : ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Transparent" x="280" y="96" width="70" height="24" forecolor="#050505" uuid="9c7dc14d-1fbc-4fee-b890-be47492e4cc4">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9344b77d-0686-41f2-a43b-a81c8fbc65aa"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Bodoni MT Black" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+                </textElement>
+                <text><![CDATA[Adresse :]]></text>
+            </staticText>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="66" splitType="Stretch">
+            <textField>
+                <reportElement mode="Opaque" x="-20" y="10" width="595" height="30" backcolor="#6BE2FA" uuid="c42326be-6b59-42d2-a8ba-7ac348bff441"/>
+                <box>
+                    <pen lineWidth="1.0" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Algerian" size="18"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nomanalyse}]]></textFieldExpression>
+            </textField>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="38" splitType="Stretch">
+            <textField>
+                <reportElement x="1" y="4" width="79" height="30" uuid="9c3f8cf9-6810-47d9-a0bb-43983eeb7ed5">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9202e312-b942-46b4-a136-da39f70eca1c"/>
+                </reportElement>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nomtest}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="470" y="4" width="79" height="30" uuid="37d7f93a-b385-4c1a-9188-65edc14ffba6">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="73af01aa-d64d-4a34-a006-fc377bc13bf3"/>
+                </reportElement>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{resultat}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="90" y="4" width="79" height="30" uuid="283bde5c-799e-4526-b845-c2be665c727a">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="066322b2-c4a2-413e-9c11-fefe488fd05f"/>
+                </reportElement>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{libellenorme}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="190" y="4" width="79" height="30" uuid="b67aebba-44fd-4a38-a942-9c9dbac07f4b">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ff6170f0-35b0-4416-808d-9aa461917e17"/>
+                </reportElement>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{maxvaluenorme}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="290" y="4" width="79" height="30" uuid="d813d3c4-3fe4-4fae-8582-cb6b81dc97f9">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="36d69a42-64f5-4c70-8aed-eecf6fdbeae2"/>
+                </reportElement>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{minvaluenorme}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="380" y="4" width="79" height="30" uuid="b38c7d76-c9da-42cd-8a64-30391a48b44b">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5525027f-055d-4726-bce1-bfcb92efe082"/>
+                </reportElement>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{unitenorme}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>

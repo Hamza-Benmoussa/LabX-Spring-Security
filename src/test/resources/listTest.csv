@@ -1,0 +1,10 @@
+description,min,max,unite
+Hemoglobin,12,18,g/dL
+LDH Level,150,450,U/L
+Glucose Level,70,110,mg/dL
+IgG Concentration,50,500,mg/dL
+Factor VIII Level,50,200,%
+ALT Level,0,40,U/L
+Troponin T Level,0,0.2,ng/mL
+CRP Level,0,3,mg/L
+PT Time,10,14,seconds

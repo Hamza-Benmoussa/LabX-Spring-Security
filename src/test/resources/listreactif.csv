@@ -1,0 +1,10 @@
+nom,description,quantiteStock,dateExpiration,fournisseurNom
+Hematoxylin,Stain for tissue samples in pathology,50,2025-03-01,SupplierA
+LDH Reagent Kit,Enzyme assay for measuring LDH levels,30,2025-04-15,SupplierB
+Glucose Oxidase,Enzyme for blood glucose test kits,40,2025-05-20,SupplierC
+IgG Antibody,For detecting and quantifying IgG antibodies,25,2025-06-10,SupplierD
+Factor VIII Reagent,For measuring Factor VIII levels,15,2025-07-05,SupplierE
+ALT Assay Kit,Enzyme assay for quantifying ALT levels,35,2025-09-28,SupplierG
+Troponin T Assay Reagent,For detecting cardiac troponin T levels,18,2025-10-15,SupplierH
+CRP Test Reagent,Immunoassay reagent for measuring CRP levels,22,2025-11-20,SupplierI
+PT Reagent,For blood clotting tests,30,2025-12-10,SupplierJ
