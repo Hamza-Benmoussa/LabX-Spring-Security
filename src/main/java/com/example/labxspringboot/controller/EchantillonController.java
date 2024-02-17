@@ -24,7 +24,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api/echantillons" ,produces = "application/json")
 @Transactional
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("*")
 @Slf4j
 public class EchantillonController {
 

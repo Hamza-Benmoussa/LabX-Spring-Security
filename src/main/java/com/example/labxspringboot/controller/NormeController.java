@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/normes",produces = "application/json")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("*")
 public class NormeController {
 
     @Autowired

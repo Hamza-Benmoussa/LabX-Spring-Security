@@ -1,6 +1,5 @@
 package com.example.labxspringboot;
 
-import com.example.labxspringboot.config.CustomCorsFilter;
 import org.apache.catalina.filters.CorsFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -27,13 +26,13 @@ public class LabXSpringBootApplication {
         SpringApplication.run(LabXSpringBootApplication.class, args);
     }
 
-    @Bean
-    public FilterRegistrationBean<CustomCorsFilter> corsFilter() {
-        FilterRegistrationBean<CustomCorsFilter> registrationBean = new FilterRegistrationBean<>();
-        registrationBean.setFilter(new CustomCorsFilter());
-        registrationBean.setOrder(0); // Set the order based on your needs
-        return registrationBean;
-    }
+//    @Bean
+//    public FilterRegistrationBean<CustomCorsFilter> corsFilter() {
+//        FilterRegistrationBean<CustomCorsFilter> registrationBean = new FilterRegistrationBean<>();
+//        registrationBean.setFilter(new CustomCorsFilter());
+//        registrationBean.setOrder(0); // Set the order based on your needs
+//        return registrationBean;
+//    }
 
 
     @Bean

@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping(value = "/api/testanalyse" , produces = "application/json")
 @Transactional
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("*")
 
 public class TestAnalyseController {
 

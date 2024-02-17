@@ -19,10 +19,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UtilisateurServiceImpl utilisateurService;
 
-    public UserDetailsServiceImpl(UtilisateurServiceImpl utilisateurService) {
-        this.utilisateurService = utilisateurService;
-    }
-
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Utilisateur utilisateur = utilisateurService.loadUserByEmail(email);
