@@ -13,19 +13,20 @@
 //public class SpringSecurOAUTH2Github {
 //
 //    @Bean
-//    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception{
+//    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
 //        http.authorizeHttpRequests().anyRequest().authenticated().and().oauth2Login();
 //        return http.build();
 //    }
-//
-////    @Bean
-////    public ClientRegistrationRepository clientrepo (){
-////        ClientRegistration cliReg = clientRegistration();
-////        return new InMemoryClientRegistrationRepository(cliReg);
-////    }
-////
-////    private ClientRegistration clientRegistration() {
-////        return CommonOAuth2Provider.GITHUB.getBuilder("github").clientId("cc6ad9be6fbfb68f17b4")
-////                .clientSecret("54831dd789a77a923f98355ffbda302ca7aae843").build();
-////    }
 //}
+//
+//////    @Bean
+//////    public ClientRegistrationRepository clientrepo (){
+//////        ClientRegistration cliReg = clientRegistration();
+//////        return new InMemoryClientRegistrationRepository(cliReg);
+//////    }
+//////
+//////    private ClientRegistration clientRegistration() {
+//////        return CommonOAuth2Provider.GITHUB.getBuilder("github").clientId("cc6ad9be6fbfb68f17b4")
+//////                .clientSecret("54831dd789a77a923f98355ffbda302ca7aae843").build();
+//////    }
+////}

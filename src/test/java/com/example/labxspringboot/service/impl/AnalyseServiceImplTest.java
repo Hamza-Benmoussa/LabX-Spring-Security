@@ -102,8 +102,8 @@ class AnalyseServiceImplTest {
         analyseDto.setEchantillon(modelMapper.map(echantillonDTO , Echantillon.class));
         analyseDto.setStatusAnalyse(StatusAnalyse.EN_COURS_ANALYSE);
         analyseDto.setNom(echantillonDTO.getNomAnalyse());
-        analyseDto.setDateFinAnalyse(inputFormat.parse("2022-10-11"));
-        analyseDto.setDateFinAnalyse(inputFormat.parse("2022-10-15"));
+        analyseDto.setDateFinAnalyse(String.valueOf(inputFormat.parse("2022-10-11")));
+        analyseDto.setDateFinAnalyse(String.valueOf(inputFormat.parse("2022-10-15")));
         analyseDto.setUtilisateurTechnicien(modelMapper.map(utilisateurDTO1,Utilisateur.class));
         analyseDto =iAnalyseService.saveAnalyse(analyseDto);
 
